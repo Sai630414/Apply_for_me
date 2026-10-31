@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApplyForMe - Paytm Software Development Engineer (Backend) Application</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      padding: 30px 20px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 36px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .header-bar {
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 20px;
+      margin-bottom: 26px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      background: #e0e7ff;
+      color: #4338ca;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 999px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+      color: #0f172a;
+    }
+    p.subtitle {
+      font-size: 13px;
+      color: #64748b;
+      margin: 0;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 28px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #0f172a;
+      box-sizing: border-box;
+      background: #ffffff;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      font-family: inherit;
+    }
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+    }
+    textarea {
+      min-height: 85px;
+      resize: vertical;
+    }
+    .radio-group,
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .radio-item,
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: #334155;
+      cursor: pointer;
+    }
+    .radio-item input,
+    .checkbox-item input {
+      margin-top: 3px;
+      cursor: pointer;
+    }
+    .legal-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 24px;
+    }
+    .btn-submit {
+      background: #00b9f5;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 24px;
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0, 185, 245, 0.3);
+    }
+    .btn-submit:hover {
+      background: #009ecc;
+    }
+    .state-mirror {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header-bar">
+      <span class="badge">ApplyForMe Test Form · Paytm Careers</span>
+      <h1 class="posting-headline" data-qa="job-title">Software Development Engineer (Backend)</h1>
+      <p class="subtitle" data-qa="company-name">Paytm · Engineering & Technology · San Francisco, CA / Remote</p>
+    </div>
+
+    <form id="job-application-form">
+      <!-- 1. PERSONAL INFORMATION (DIRECT_PROFILE_FIELD) -->
+      <div class="section-title">1. Personal Information</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first-name">First Name *</label>
+          <input type="text" id="first-name" name="firstName" autocomplete="given-name" placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name *</label>
+          <input type="text" id="last-name" name="lastName" autocomplete="family-name" placeholder="Last Name" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="full-name">Full Name (React Controlled Mirror) *</label>
+        <input type="text" id="full-name" name="fullName" autocomplete="name" placeholder="Your full name" required>
+        <div class="state-mirror">React State Mirror: <strong id="react-state-mirror">Empty</strong></div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email-address">Email Address *</label>
+          <input type="email" id="email-address" name="email" autocomplete="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone-number">Phone Number *</label>
+          <input type="tel" id="phone-number" name="phone" autocomplete="tel" placeholder="+1 (555) 000-0000" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date-of-birth">Date of Birth</label>
+          <input type="date" id="date-of-birth" name="dateOfBirth">
+        </div>
+        <div class="form-group">
+          <label for="gender-select">Gender</label>
+          <select id="gender-select" name="gender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Non-binary">Non-binary</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="current-city">Current City *</label>
+          <input type="text" id="current-city" name="city" placeholder="City" required>
+        </div>
+        <div class="form-group">
+          <label for="current-state">State / Province</label>
+          <input type="text" id="current-state" name="state" placeholder="State / Province">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="current-country">Country *</label>
+          <select id="current-country" name="country">
+            <option value="">Select Country</option>
+            <option value="United States">United States</option>
+            <option value="India">India</option>
+            <option value="Canada">Canada</option>
+            <option value="United Kingdom">United Kingdom</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="street-address">Street Address</label>
+          <input type="text" id="street-address" name="address" placeholder="123 Main St">
+        </div>
+      </div>
+
+      <!-- 2. PROFESSIONAL LINKS (DIRECT_PROFILE_FIELD) -->
+      <div class="section-title">2. Professional Presence</div>
+
+      <div class="form-group">
+        <label for="linkedin-url">LinkedIn Profile URL *</label>
+        <input type="url" id="linkedin-url" name="linkedin" placeholder="https://linkedin.com/in/username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="github-url">GitHub Profile URL *</label>
+        <input type="url" id="github-url" name="github" placeholder="https://github.com/username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="portfolio-url">Personal Portfolio / Website</label>
+        <input type="url" id="portfolio-url" name="portfolio" placeholder="https://yoursite.dev">
+      </div>
+
+      <!-- 3. EDUCATION (DIRECT_PROFILE_FIELD + DROPDOWN) -->
+      <div class="section-title">3. Education Background</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="institution-name">College / University Name *</label>
+          <input type="text" id="institution-name" name="university" placeholder="e.g. Stanford University" required>
+        </div>
+        <div class="form-group">
+          <label for="degree-select">Degree Level *</label>
+          <select id="degree-select" name="degree" required>
+            <option value="">Select Degree</option>
+            <option value="Bachelor of Science (B.S.)">Bachelor of Science (B.S.)</option>
+            <option value="Bachelor of Technology (B.Tech)">Bachelor of Technology (B.Tech)</option>
+            <option value="Master of Science (M.S.)">Master of Science (M.S.)</option>
+            <option value="Doctor of Philosophy (Ph.D.)">Doctor of Philosophy (Ph.D.)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="specialization-name">Major / Specialization *</label>
+          <input type="text" id="specialization-name" name="specialization" placeholder="e.g. Computer Science" required>
+        </div>
+        <div class="form-group">
+          <label for="graduation-year">Graduation Year (Select) *</label>
+          <select id="graduation-year" name="graduationYear" required>
+            <option value="">Select Year</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cgpa-score">Cumulative GPA / CGPA</label>
+        <input type="text" id="cgpa-score" name="cgpa" placeholder="e.g. 3.92">
+      </div>
+
+      <!-- 4. EXPERIENCE & SKILLS (DIRECT_PROFILE_FIELD) -->
+      <div class="section-title">4. Experience & Skills</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="current-company">Current Company / Employer</label>
+          <input type="text" id="current-company" name="currentCompany" placeholder="Current company">
+        </div>
+        <div class="form-group">
+          <label for="current-role">Current Title / Role</label>
+          <input type="text" id="current-role" name="currentRole" placeholder="Current title">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="employment-type">Employment Type</label>
+          <select id="employment-type" name="employmentType">
+            <option value="">Select Type</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Internship">Internship</option>
+            <option value="Part-time">Part-time</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="notice-period-select">Notice Period</label>
+          <select id="notice-period-select" name="noticePeriod">
+            <option value="">Select Notice Period</option>
+            <option value="Immediate">Immediate</option>
+            <option value="15 Days">15 Days</option>
+            <option value="30 Days">30 Days</option>
+            <option value="60 Days">60 Days</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="technical-skills">Key Technical Skills & Technologies *</label>
+        <textarea id="technical-skills" name="skills" placeholder="List your programming languages, frameworks, and tools..."></textarea>
+      </div>
+
+      <!-- 5. INTELLIGENT AI APPLICATION QUESTIONS (AI_GENERATED_ANSWER) -->
+      <div class="section-title">5. Tailored Application Questions (AI-Powered)</div>
+
+      <div class="form-group">
+        <label for="why-paytm">Why do you want to work at Paytm and join this team? *</label>
+        <textarea id="why-paytm" name="whyJoin" placeholder="Explain your interest in Paytm and how this role fits your career..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="challenging-project">Describe a challenging technical project you built and the technologies used *</label>
+        <textarea id="challenging-project" name="challengingProject" placeholder="Describe architectural challenges, technologies chosen, and outcomes..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="candidate-strengths">What are your core strengths and what makes you a suitable candidate for this role? *</label>
+        <textarea id="candidate-strengths" name="strengths" placeholder="Highlight key engineering competencies and personal strengths..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="tech-experience">Explain your practical experience with Python, FastAPI, or distributed systems</label>
+        <textarea id="tech-experience" name="techExperience" placeholder="Share your experience building backend services or microservices..."></textarea>
+      </div>
+
+      <!-- 6. ELIGIBILITY & PREFERENCES (SELECT & RADIOS) -->
+      <div class="section-title">6. Eligibility & Preferences</div>
+
+      <div class="form-group">
+        <label for="work-authorization-select">Are you legally authorized to work in the United States? *</label>
+        <select id="work-authorization-select" name="workAuthorization" required>
+          <option value="">Select an option</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="sponsorship-select">Will you now or in the future require visa sponsorship? *</label>
+        <select id="sponsorship-select" name="sponsorshipRequired" required>
+          <option value="">Select an option</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Are you willing to relocate for this position?</label>
+        <div class="radio-group">
+          <label class="radio-item">
+            <input type="radio" name="willingToRelocate" value="Yes" id="relocate-yes"> Yes
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="willingToRelocate" value="No" id="relocate-no"> No
+          </label>
+        </div>
+      </div>
+
+      <!-- 7. FACTUAL MISSING QUESTION (USER_INPUT_REQUIRED) -->
+      <div class="form-group">
+        <label for="security-clearance">Do you hold an active Top Secret Security Clearance?</label>
+        <input type="text" id="security-clearance" name="securityClearance" placeholder="Specify active clearance level if applicable">
+      </div>
+
+      <!-- 8. RESUME UPLOAD (FILE_UPLOAD) -->
+      <div class="section-title">7. Resume & Documents</div>
+
+      <div class="form-group">
+        <label for="resume-upload">Upload Resume / CV (PDF, DOCX) *</label>
+        <input type="file" id="resume-upload" name="resumeFile" accept=".pdf,.doc,.docx">
+      </div>
+
+      <!-- 9. CONSENT & LEGAL DECLARATIONS (CONSENT_OR_LEGAL - NEVER AUTOMATICALLY CHECKED) -->
+      <div class="legal-box">
+        <div style="font-weight: 700; margin-bottom: 8px; font-size: 13px; color: #1e293b;">Legal Declarations & Consent</div>
+        
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" id="consent-privacy" name="privacyPolicyAgree">
+            <span>I agree to the Paytm Privacy Policy and consent to the processing of my candidate data.</span>
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" id="certify-accuracy" name="accuracyCertified">
+            <span>I certify that all statements made in this job application are true, complete, and accurate.</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="button" class="btn-submit" id="submit-application-btn">Submit Application</button>
+    </form>
+  </div>
+
+  <script>
+    // React state mirror emulation for full-name input
+    const fullNameInput = document.getElementById('full-name');
+    const mirrorEl = document.getElementById('react-state-mirror');
+    if (fullNameInput && mirrorEl) {
+      const updateMirror = () => {
+        mirrorEl.textContent = fullNameInput.value || 'Empty';
+      };
+      fullNameInput.addEventListener('input', updateMirror);
+      fullNameInput.addEventListener('change', updateMirror);
+    }
+  </script>
+</body>
+</html>

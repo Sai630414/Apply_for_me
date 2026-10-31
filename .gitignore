@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+# Backend environment and local data
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+*.sqlite
+*.sqlite3
+
+# Node and extension builds
+node_modules/
+extension/node_modules/
+dist/
+extension/dist/
+build/
+coverage/
+*.log
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Uploads and runtime artifacts
+uploads/
+backend/uploads/
+*.pid
